@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1683464265 source:c:\users\alvin\onedrive\desktop\komgraf\chickenjump\main.cpp
+1683473459 source:c:\users\alvin\onedrive\desktop\komgraf\chickenjump\main.cpp
+	<GL/gl.h>
 	<GL/glut.h>
 	<windows.h>
 	<math.h>
