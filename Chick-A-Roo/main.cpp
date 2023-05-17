@@ -1395,12 +1395,7 @@ void display(){
 void GameOver(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-    chickenObject();
-    rockObject();
-    clouds();
     glColor3f(1, 0, 0);
-
     glRasterPos3f(-1, 0.5, 0);
     std::string text = "GAME OVER "; // GAME OVER
     for (char c : text) {
@@ -1427,7 +1422,7 @@ void GameOver(){
 
 void WelcomeDisplay(){
     rockSpeed = 0;
-    glLoadIdentity(); // harus pake ini biar ga scaling terus menerus
+    glLoadIdentity();
     glClearColor(0.28, 0.75, 0.9, 1.0);
     glColor3ub(173, 216, 230);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
