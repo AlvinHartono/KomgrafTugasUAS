@@ -77,21 +77,30 @@ void keyboard(unsigned char key, int x, int y) {
 
 void displayPoin(){
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(1.0, 1.0, 1.0);  // Set text color to white
+    glColor3f(0.0, 0.0, 0.0); // Set background color to black
+    glBegin(GL_QUADS);
+    glVertex2f(-0.95, 0.8);
+    glVertex2f(-0.75, 0.8);
+    glVertex2f(-0.75, 1.0);
+    glVertex2f(-0.95, 1.0);
+    glEnd();
+
+// Set text color to white
+    glColor3f(1.0, 1.0, 1.0);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(-1.0, 1.0, -1.0, 1.0);  // Set the 2D orthographic projection
+    gluOrtho2D(-1.0, 1.0, -1.0, 1.0); // Set the 2D orthographic projection
 
-    glRasterPos2f(-0.9, 0.9);  // Set the starting position for text
+    glRasterPos2f(-0.9, 0.9); // Set the starting position for text
     std::string text = "Score: " + std::to_string(score); // Concatenate "Score:" with the score value
 
-    // Loop through each character of the text and display it
+// Loop through each character of the text and display it
     for (char c : text) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
     }
 
-    glFlush();  // Flush the buffer to display the text
+    glFlush(); // Flush the buffer to display the text
 }
 
 void update(int value) {
@@ -1396,19 +1405,19 @@ void GameOver(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glColor3f(1, 0, 0);
-    glRasterPos3f(-1, 0.5, 0);
+    glRasterPos3f(-1.25, 1.5, 0);
     std::string text = "GAME OVER "; // GAME OVER
     for (char c : text) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
     }
 
-    glRasterPos3f(-1, 0.25, 0);
+    glRasterPos3f(-1.15, 0.25, 0);
     std::string text1 = "Score: " + std::to_string(score);
     for (char c : text1) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
     }
 
-    glRasterPos3f(-1, 0, 0);
+    glRasterPos3f(-1.3, 0, 0);
     std::string text3 = "Press r to restart";
 
 
@@ -1428,13 +1437,13 @@ void WelcomeDisplay(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glColor3f(1, 0, 0);
 
-    glRasterPos3f(0, 0.5, 0);
+    glRasterPos3f(-0.10, 0.5, 0);
     std::string text = "Chick-A-Roo"; // GAME NAME
     for (char c : text) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
     }
 
-    glRasterPos3f(0, 0, 0);
+    glRasterPos3f(-0.175, 0, 0);
     std::string text2 = "Press SPACEBAR to start";
     for (char c : text2) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
