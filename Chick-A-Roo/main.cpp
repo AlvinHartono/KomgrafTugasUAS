@@ -77,7 +77,7 @@ void keyboard(unsigned char key, int x, int y) {
 
 void displayPoin(){
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(0.0, 0.0, 0.0); // Set background color to black
+    glColor3f(0.0, 0.0, 0.0);
     glBegin(GL_QUADS);
     glVertex2f(-0.95, 0.8);
     glVertex2f(-0.75, 0.8);
@@ -85,22 +85,22 @@ void displayPoin(){
     glVertex2f(-0.95, 1.0);
     glEnd();
 
-// Set text color to white
+
     glColor3f(1.0, 1.0, 1.0);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(-1.0, 1.0, -1.0, 1.0); // Set the 2D orthographic projection
+    gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
 
-    glRasterPos2f(-0.9, 0.9); // Set the starting position for text
-    std::string text = "Score: " + std::to_string(score); // Concatenate "Score:" with the score value
+    glRasterPos2f(-0.9, 0.9);
+    std::string text = "Score: " + std::to_string(score);
 
-// Loop through each character of the text and display it
+
     for (char c : text) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
     }
 
-    glFlush(); // Flush the buffer to display the text
+    glFlush();
 }
 
 void update(int value) {
